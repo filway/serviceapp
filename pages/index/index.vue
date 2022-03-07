@@ -20,12 +20,10 @@
 		},
 		methods: {
 			goWxapp() {
-				this.message.message('已经好了').then((res) => {
-					console.log(res)
-					this.store.setData('name', 'filway')
-					this.store.setData('age', 18)
+				this.http.get('/users/filway', '', 'https://api.github.com').then((res) => {
+					console.log(res.avatar_url)
+				}).catch((err) => {
 				})
-				console.log(11111)
 			}
 		}
 	}
